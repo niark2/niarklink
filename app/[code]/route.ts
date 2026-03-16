@@ -5,9 +5,9 @@ export const runtime = 'edge'
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { code: string } }
+  { params }: { params: Promise<{ code: string }> }
 ) {
-  const code = (await params).code
+  const { code } = await params
 
   if (code.includes('.') || code.startsWith('_')) {
     return new Response(null, { status: 404 })
