@@ -13,8 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NiarkLink - Shorten your URLs",
-  description: "A fast, elegant and free URL shortener powered by Vercel and Upstash.",
+  title: "NiarkLink - Premium URL Shortener",
+  description: "Minimalist, secure and private URL shortener powered by Next.js and Supabase.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

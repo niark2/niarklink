@@ -64,6 +64,15 @@ export default function Home() {
     setActiveQR(null)
 
     try {
+      // Basic client-side validation
+      new URL(url)
+    } catch {
+      setError('Veuillez entrer une adresse URL valide (ex: https://google.com)')
+      setLoading(false)
+      return
+    }
+
+    try {
       const form = e.target as HTMLFormElement
       const formData = new FormData(form)
       const result = await createShortLink(formData)
